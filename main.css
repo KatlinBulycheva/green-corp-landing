@@ -3,6 +3,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
 }
 body {
     font-family: 'Raleway', sans-serif;
@@ -38,11 +42,16 @@ button {
 }
 .about__image {
     width: 500px;
+    position: relative;
 }
    
 .about__sun-image {
     width: 100px;
     height: 100px;
+    animation: rotation 10s infinite linear;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .about {
     display: flex;
@@ -158,4 +167,9 @@ footer {
 }
 .footer__links a {
     margin-bottom: 15px;
+}
+
+@keyframes rotation {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
 }
