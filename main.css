@@ -3,10 +3,17 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
     top: 0;
-    background-color: #fff;
+    background: none;
+    transition: box-shadow, background-color .25s ease;
     z-index: 1;
+}
+.header__scrolled {
+    box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
+    background-color: white;
 }
 body {
     font-family: 'Raleway', sans-serif;
@@ -57,7 +64,7 @@ button {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 115px;
+    padding-top: 200px;
     padding-bottom: 115px;
     background-image: url('img/back.png');
     background-position: center;
@@ -207,6 +214,7 @@ footer {
     .about {
         flex-direction: column-reverse;
         padding: 50px 10px;
+        padding-top: 100px;
     }
     .about h1 {
         font-size: 36px;
@@ -378,6 +386,14 @@ button:hover {
     justify-content: center;
 }
 
+/*Для планшетного устройства: */
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: auto;
+    }
+}
+
+/*Для мобильного устройства: */
 @media (max-width: 720px) {
     .features {
         padding: 50px 10px;
@@ -410,7 +426,7 @@ button:hover {
     }
     .promo__right {
         padding: 50px 10px;
-        width: 100%;
+        width: auto;
     }
     .promo__image {
         width: 100%;
@@ -424,4 +440,5 @@ button:hover {
     top: 0;
     right: 0;
     height: 100%;
+    width: 100%;
 }
